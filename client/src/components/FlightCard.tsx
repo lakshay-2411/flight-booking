@@ -27,7 +27,6 @@ export const FlightCard: React.FC<Props> = ({ flight, passengers, date }) => {
   const [currentPrice, setCurrentPrice] = useState(
     flight.currentPrice || flight.price
   );
-  const [isHovered, setIsHovered] = useState(false);
   const [isBooking, setIsBooking] = useState(false);
   const [showDetails, setShowDetails] = useState(false);
   const navigate = useNavigate();
@@ -184,9 +183,6 @@ export const FlightCard: React.FC<Props> = ({ flight, passengers, date }) => {
       available: Math.random() > 0.7,
     },
   ];
-
-  // Get available amenities
-  const availableAmenities = amenities.filter((a) => a.available);
 
   // Generate random price data
   const originalPrice = Math.floor(currentPrice * 1.1);
