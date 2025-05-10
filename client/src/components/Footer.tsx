@@ -140,19 +140,6 @@ const Footer = () => {
                 <Mail className="w-5 h-5 mr-3 text-blue-400" />
                 <span className="text-gray-400">support@flightbooker.com</span>
               </li>
-              <li className="mt-6">
-                <h4 className="font-medium mb-2">Subscribe to our newsletter</h4>
-                <div className="flex">
-                  <input 
-                    type="email" 
-                    placeholder="Your email" 
-                    className="px-4 py-2 bg-gray-800 text-gray-100 rounded-l outline-none flex-grow"
-                  />
-                  <button className="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r transition-colors duration-300">
-                    Subscribe
-                  </button>
-                </div>
-              </li>
             </ul>
           </div>
           <p className="text-gray-500 text-sm mb-4 md:mb-0">

@@ -337,7 +337,7 @@ const BookingPage = () => {
           </div>
 
           {/* Passenger Form Stepper */}
-          <div className="p-6">
+          <div className="p-2">
             <div className="mb-4 flex justify-between items-center">
               <h3 className="font-bold text-gray-800">
                 Passenger {activeStep + 1} of {passengerCount}
@@ -412,7 +412,7 @@ const BookingPage = () => {
                 <button
                   onClick={prevStep}
                   disabled={activeStep === 0}
-                  className={`py-3 px-6 rounded-lg border ${
+                  className={`xl:py-3 py-2 xl:px-6 px-2 text-sm xl:text-base rounded-lg border ${
                     activeStep === 0
                       ? "bg-gray-100 text-gray-400 cursor-not-allowed"
                       : "bg-white text-blue-600 border-blue-600 hover:bg-blue-50"
@@ -424,14 +424,14 @@ const BookingPage = () => {
                 {activeStep < passengers.length - 1 ? (
                   <button
                     onClick={nextStep}
-                    className="py-3 px-6 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+                    className="xl:py-3 py-2 xl:px-6 px-2 text-sm xl:text-base rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
                   >
                     Next Passenger
                   </button>
                 ) : (
                   <button
                     onClick={handleBooking}
-                    className="py-3 px-6 rounded-lg bg-green-600 text-white hover:bg-green-700 transition flex items-center"
+                    className="xl:py-3 py-2 xl:px-6 px-2 text-sm xl:text-base rounded-lg bg-green-600 text-white hover:bg-green-700 transition flex items-center"
                   >
                     <svg
                       className="w-5 h-5 mr-2"

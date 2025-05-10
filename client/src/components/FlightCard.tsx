@@ -228,7 +228,7 @@ export const FlightCard: React.FC<Props> = ({ flight, passengers, date }) => {
         ></div>
 
         {/* Main card content */}
-        <div className="p-5">
+        <div className="xl:p-5 p-3">
           {/* Top row with airline info and price */}
           <div className="flex justify-between items-start mb-5">
             <div className="flex items-center">
@@ -285,7 +285,7 @@ export const FlightCard: React.FC<Props> = ({ flight, passengers, date }) => {
             {/* Departure */}
             <div className="text-center">
               <div className="flex flex-col items-center">
-                <p className="text-2xl font-semibold text-gray-900 flex items-baseline">
+                <p className="xl:text-2xl text-lg font-semibold text-gray-900 flex items-baseline">
                   {departureTime.time}
                   <span className="text-xs text-gray-500 ml-1">
                     {departureTime.period}
@@ -329,7 +329,7 @@ export const FlightCard: React.FC<Props> = ({ flight, passengers, date }) => {
             {/* Arrival */}
             <div className="text-center">
               <div className="flex flex-col items-center">
-                <p className="text-2xl font-semibold text-gray-900 flex items-baseline">
+                <p className="xl:text-2xl text-lg font-semibold text-gray-900 flex items-baseline">
                   {arrivalTime.time}
                   <span className="text-xs text-gray-500 ml-1">
                     {arrivalTime.period}
@@ -356,14 +356,14 @@ export const FlightCard: React.FC<Props> = ({ flight, passengers, date }) => {
               <div className="flex items-center text-sm text-gray-600">
                 <Users size={14} className="mr-1.5" />
                 {passengers || "1"}{" "}
-                {parseInt(passengers || "1") > 1 ? "Passengers" : "Passenger"}
+                {parseInt(passengers || "1") > 1 ? "People" : "Person"}
               </div>
             </div>
 
             <button
               onClick={handleBook}
               disabled={isBooking}
-              className={`px-6 py-2 rounded-lg font-medium text-white transition-all
+              className={`xl:px-6 px-2 py-2 rounded-lg font-medium text-white text-xs xl:text-base transition-all
                 ${
                   isBooking
                     ? "bg-gray-400 cursor-not-allowed"

@@ -279,7 +279,7 @@ const Header: React.FC = () => {
       {/* Mobile Navigation Menu */}
       {isMobileMenuOpen && (
         <div
-          className={`md:hidden ${
+          className={`md:hidden w-[90%] rounded-xl absolute top-25 left-8 ${
             isScrolled
               ? "bg-white/95 backdrop-blur-md"
               : "bg-gradient-to-b from-blue-600 to-indigo-700"

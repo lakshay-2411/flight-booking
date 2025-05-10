@@ -130,6 +130,7 @@ const SearchPage = () => {
                   <input
                     type="date"
                     value={date}
+                    min={new Date().toISOString().split("T")[0]}
                     onChange={(e) => setDate(e.target.value)}
                     className="w-full border border-gray-300 rounded-lg py-3 pl-10 pr-4 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
                   />
