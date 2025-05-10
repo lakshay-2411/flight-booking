@@ -29,7 +29,7 @@ const BookingPage = () => {
     const fetchFlightDetails = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:4000/api/flightDetails/${flightId}`
+          `${import.meta.env.VITE_BACKEND_URL}/api/flightDetails/${flightId}`
         );
         setFlight(response.data);
         setLoading(false);
@@ -67,14 +67,17 @@ const BookingPage = () => {
       }
 
       // Create booking
-      const res = await axios.post("http://localhost:4000/api/bookings", {
-        flight: flightId,
-        from: params.get("from"),
-        to: params.get("to"),
-        journeyDate: params.get("date"),
-        passenger: JSON.stringify(passengers),
-        numPassengers: passengers.length,
-      });
+      const res = await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/bookings`,
+        {
+          flight: flightId,
+          from: params.get("from"),
+          to: params.get("to"),
+          journeyDate: params.get("date"),
+          passenger: JSON.stringify(passengers),
+          numPassengers: passengers.length,
+        }
+      );
 
       // Add to booking context
       const bookingTime = new Date().toLocaleString();

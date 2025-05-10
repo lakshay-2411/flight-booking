@@ -13,6 +13,7 @@ export const searchAirports = async (query: string): Promise<Airport[]> => {
   if (!query) return [];
 
   const token = await getAccessToken();
+  // console.log('Token:', token);
   const response = await axios.get(
     'https://test.api.amadeus.com/v1/reference-data/locations',
     {

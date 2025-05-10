@@ -31,7 +31,9 @@ const BookingHistory: React.FC = () => {
     const fetchBookings = async () => {
       try {
         setLoading(true);
-        const response = await fetch("http://localhost:4000/api/bookings");
+        const response = await fetch(
+          `${import.meta.env.VITE_BACKEND_URL}/api/bookings`
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch bookings");
         }
@@ -73,7 +75,7 @@ const BookingHistory: React.FC = () => {
 
   if (error) {
     return (
-      <div className="bg-red-50 p-6 rounded-xl shadow mt-6">
+      <div className="bg-red-50 p-6 rounded-xl flex items-center justify-center flex-col gap-4 h-50 shadow mt-25">
         <p className="text-red-600 font-medium text-center">{error}</p>
         <button
           className="mt-4 block mx-auto px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"

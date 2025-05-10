@@ -73,9 +73,12 @@ export const FlightCard: React.FC<Props> = ({ flight, passengers, date }) => {
     try {
       setIsBooking(true);
       // Record booking attempt for dynamic pricing
-      await axios.post("http://localhost:4000/api/flights/booking-attempt", {
-        flightId: flight._id,
-      });
+      await axios.post(
+        `${import.meta.env.VITE_BACKEND_URL}/api/flights/booking-attempt`,
+        {
+          flightId: flight._id,
+        }
+      );
 
       // Navigate to booking page with relevant flight details
       navigate(
@@ -86,7 +89,7 @@ export const FlightCard: React.FC<Props> = ({ flight, passengers, date }) => {
 
       // Refresh flight price in background
       const flightsResponse = await axios.get(
-        `http://localhost:4000/api/flights`,
+        `${import.meta.env.VITE_BACKEND_URL}/api/flights`,
         {
           params: { from: flight.from, to: flight.to },
         }

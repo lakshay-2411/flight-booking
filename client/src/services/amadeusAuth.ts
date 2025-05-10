@@ -1,8 +1,12 @@
 // src/services/amadeusAuth.ts
 import axios from "axios";
 
-const AMADEUS_API_KEY = "zNUAB6ZM6jVI69NFK4zpsYMqh5aiM81r";
-const AMADEUS_API_SECRET = "5UeA0f9HlRjJX5Bk";
+const AMADEUS_API_KEY = import.meta.env.VITE_AMADEUS_API_KEY;
+const AMADEUS_API_SECRET = import.meta.env.VITE_AMADEUS_API_SECRET;
+
+if (!AMADEUS_API_KEY || !AMADEUS_API_SECRET) {
+  console.log("Amadeus API credentials are not set in the environment variables.");
+}
 
 let token: string | null = null;
 let tokenExpiry: number | null = null;

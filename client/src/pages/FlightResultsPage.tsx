@@ -55,12 +55,15 @@ const FlightResultsPage = () => {
     const fetchFlights = async () => {
       setLoading(true);
       try {
-        const res = await axios.get("http://localhost:4000/api/flights", {
-          params: {
-            from: params.get("from"),
-            to: params.get("to"),
-          },
-        });
+        const res = await axios.get(
+          `${import.meta.env.VITE_BACKEND_URL}/api/flights`,
+          {
+            params: {
+              from: params.get("from"),
+              to: params.get("to"),
+            },
+          }
+        );
 
         // Map backend flights to include a time property for compatibility
         const mappedFlights = res.data.map((flight: Flight) => ({
@@ -211,7 +214,10 @@ const FlightResultsPage = () => {
       {/* Header with search summary */}
       <div className="bg-indigo-600 text-white py-6 shadow-lg">
         <div className="max-w-6xl mx-auto px-4">
-          <h1 className="text-3xl font-bold mb-6"><br /><br /></h1>
+          <h1 className="text-3xl font-bold mb-6">
+            <br />
+            <br />
+          </h1>
 
           {/* Search Summary Bar */}
           <div className="bg-white/10 backdrop-blur-md rounded-lg p-4 flex flex-wrap items-center justify-between">
@@ -259,7 +265,11 @@ const FlightResultsPage = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-1">
                       From
                     </label>
-                    <AirportInput label="" value={fromCity} onChange={setFrom} />
+                    <AirportInput
+                      label=""
+                      value={fromCity}
+                      onChange={setFrom}
+                    />
                   </div>
 
                   <div className="relative text-black">
