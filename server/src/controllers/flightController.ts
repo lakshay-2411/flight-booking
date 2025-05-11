@@ -9,10 +9,11 @@ function calculateDynamicPrice(flight: any): number {
     (attempt: { timestamp: Date }) => attempt.timestamp > fiveMinutesAgo
   );
 
+  let updatedPrice = flight.price;
   if (recentBookings.length >= 3) {
-    return flight.price * 1.1; // 10% increase
+    updatedPrice = flight.price * 1.1; // 10% increase
   }
-  return flight.price;
+  return updatedPrice.toFixed(2);
 }
 
 // Clean up old booking attempts
